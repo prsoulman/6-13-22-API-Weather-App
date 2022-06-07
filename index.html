@@ -14,17 +14,33 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>Work Day Scheduler</title>
+    <title>Weather Forecast</title>
   </head>
-
   <body>
     <header class="jumbotron">
-      <h1 class="display-3">Work Day Scheduler</h1>
-      <p class="lead">A simple calendar app for scheduling your work day</p>
-      <p id="currentDay" class="lead"></p>
+      <h1 class="display-3">Weather Dashboard</h1>
     </header>
     <div class="container">
-      <!-- Timeblocks go here -->
+     <aside class="column d-grid gap-2" id="search-for-a-city">
+       <div class="search">searchbar
+        <button class="btn btn-primary" type="button">Search</button>
+        <div class="input-group">
+          <div class="form-outline">
+            <input type="search" id="form1" class="form-control" />
+            <label class="form-label" for="form1">Search</label>
+          </div>
+          <button type="button" class="btn btn-primary">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+       </div>
+       <btn class="searchBtn">search</btn>
+       <btn class="Austin">Austin</btn>  
+       <btn class="Chicago">Chicago</btn>
+       <btn class="New York">New York</btn>
+       <btn class="Orlando">Orlando</btn>
+       <button class="San Francisco">San Francisco</button> 
+     </aside>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
