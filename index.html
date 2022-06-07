@@ -13,37 +13,54 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./assets/style/style.css" />
     <title>Weather Forecast</title>
   </head>
   <body>
     <header class="jumbotron">
-      <h1 class="display-3">Weather Dashboard</h1>
+      <h1 class="col-sm-auto">Weather Dashboard</h1>
     </header>
     <div class="container">
      <aside class="column d-grid gap-2" id="search-for-a-city">
-       <div class="search">searchbar
-        <button class="btn btn-primary" type="button">Search</button>
+       <div class="search">Search
+        <!-- <button class="btn btn-primary" type="button">Search</button> -->
         <div class="input-group">
           <div class="form-outline">
-            <input type="search" id="form1" class="form-control" />
-            <label class="form-label" for="form1">Search</label>
+            <input type="text" id="cityname" class="form-control" />
+            <!-- <label class="form-label" for="form1">Search</label> -->
           </div>
-          <button type="button" class="btn btn-primary">
+          <button type="button" class="btn btn-primary" id="search">
             <i class="fas fa-search"></i>
           </button>
         </div>
        </div>
-       <btn class="searchBtn">search</btn>
-       <btn class="Austin">Austin</btn>  
-       <btn class="Chicago">Chicago</btn>
-       <btn class="New York">New York</btn>
-       <btn class="Orlando">Orlando</btn>
+       <!-- <ol class="row align-items-center">
+       <button class="searchBtn">search</button>
+       <button class="Austin">Austin</button>  
+       <button class="Chicago">Chicago</button>
+       <button class="New York">New York</button>
+       <button class="Orlando">Orlando</button>
        <button class="San Francisco">San Francisco</button> 
+      </ol> -->
      </aside>
+    
+      <div id="todayweather">
+        <div class="col-3" id="City">
+          <h1>City:</h1></div>
+        <div class="col-3" id="temp">
+          <h1>temperature:</h1></div>
+        <div class="col-3" id="wind">
+          <h1>wind:</h1></div>
+        <div class="col-3" id="Hum">
+          <h1>Humidity:</h1></div>
+        <div class="col-3" id="uv">
+          <h1>UV Index:</h1></div>
+      </div>
     </div>
-
+    <footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/script/script.js"></script>
+    </footer>
   </body>
 </html>
