@@ -30,7 +30,12 @@ function getCityWeather(lat, lon, city) {
 
 function displayWeather(resp) {
 console.log(resp);
-let row = document.querySelector('.todayweather');
+let city = document.querySelector('#City');
+let temp = document.querySelector('#temp');
+let wind = document.querySelector('#wind');
+let humidity = document.querySelector('#Hum');
+let uv = document.querySelector('#uv');
+resp.current = document.appendChild(row);
 }
 //function printWeather
 
