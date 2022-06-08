@@ -2,6 +2,7 @@ var apiKey='dc7007df2c352fd1a2d149bf261a7be7';
 var searchButton=document.getElementById('search');
 console.log(searchButton);
 
+
 // connect the api to weather 
 
 // GIVEN a weather dashboard with form inputs --need text feild input
@@ -17,14 +18,21 @@ function getGeoLocation() {
     });
 }
 function getCityWeather(lat, lon, city) {
-  fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&appid=${apiKey}`).then(function (response) {
+  fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&lang=en&units=imperial&exclude=minutely,hourly,alerts&appid=${apiKey}`).then(function (response) {
     return response.json();
   })
   .then(function (data) {
     console.log(data);
     console.log(city);
+    displayWeather(data);
   });
 }
+
+function displayWeather(resp) {
+console.log(resp);
+let row = document.querySelector('.todayweather');
+}
+//function printWeather
 
 // WHEN I search for a city THEN I am presented with current and future conditions for that city and that city is added to the search history
 // WHEN I view current weather conditions for that city
