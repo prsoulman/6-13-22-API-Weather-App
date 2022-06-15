@@ -28,15 +28,17 @@ function getCityWeather(lat, lon, city) {
   });
 }
 
-function displayWeather(resp) {
-console.log(resp);
+function displayWeather(data) {
+console.log(data);
 let city = document.querySelector('#City');
 let temp = document.querySelector('#temp');
 let wind = document.querySelector('#wind');
 let humidity = document.querySelector('#Hum');
-let uv = document.querySelector('#uv');
-resp.current = document.appendChild(row);
+let uv = document.querySelector('#uv').append('Current');
+data.current = document.append('City');
 }
+
+
 //function printWeather
 
 // WHEN I search for a city THEN I am presented with current and future conditions for that city and that city is added to the search history

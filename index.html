@@ -20,8 +20,10 @@
     <header class="jumbotron">
       <h1 class="col-sm-auto">Weather Dashboard</h1>
     </header>
+
+
     <div class="container">
-     <aside class="column d-grid gap-2" id="search-for-a-city">
+     <aside class="container fluid" id="search-for-a-city">
        <div class="search">Search
         <!-- <button class="btn btn-primary" type="button">Search</button> -->
         <div class="input-group">
@@ -44,19 +46,56 @@
       </ol> -->
      </aside>
     
-      <div id="todayweather">
-        <div class="col-3" id="City">
-          <h1>City:</h1></div>
-        <div class="col-3" id="temp">
-          <h1>temperature:</h1></div>
-        <div class="col-3" id="wind">
-          <h1>wind:</h1></div>
-        <div class="col-3" id="Hum">
-          <h1>Humidity:</h1></div>
-        <div class="col-3" id="uv">
-          <h1>UV Index:</h1></div>
+     <ul class="list-group">
+      <h2> Today's Weather</h2>
+      <li class="list-group-item City">City</li>
+      <li class="list-group-item temp">temp</li>
+      <li class="list-group-item wind">wind</li>
+      <li class="list-group-item Humidity">Humidity</li>
+      <li class="list-group-item UV">UV Index</li>
+    </ul>
+  <div class="container row five-day-forecast">
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="..." alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="..." alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="..." alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="..." alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="..." alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
     <footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
