@@ -44,7 +44,19 @@ function getCityWeather(lat, lon, city) {
     let humidityDisplay = document.querySelector('.Humidity').append(''+ humidity);
     let uvDisplay = document.querySelector('.UV').append(uvi);
 
-
+    for (var i =1; i<6;i++) {
+      console.log(data.daily[i]);
+      var day=moment.unix(data.daily[i].dt).format('dddd');
+      console.log(day);
+      var card=$('<div>').addClass('card m-2').attr('style', 'width: auto');
+      var imgTop=$('<img>').addClass('icon').attr('src', 'http://openweathermap.org/img/wn/10d.png').attr('alt', 'card img cap');
+      var cardBody=$('<div>').addClass('card-body');
+      var cardTitle=$('<h5>').addClass('card-title').text(day);
+      var tempEl=$('<p>').addClass('card-text').text('tempature: '+data.daily[i].temp.day);
+      var HumidityEl=$('<p>').addClass('card-text').text('Humidity: '+data.daily[i].humidity+'%');
+      var windEl=$('<p>').addClass('card-text').text('Wind: '+data.daily[i].wind_speed+'MPH');
+      $('.five-day-forecast').append(card.append(cardBody.append(cardTitle.append(imgTop),tempEl,HumidityEl,windEl)));
+    } 
     //displayWeather(data);
   });
 }
