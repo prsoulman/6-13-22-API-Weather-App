@@ -3,6 +3,8 @@ var searchButton=document.getElementById('search');
 console.log(searchButton);
 
 
+
+
 // connect the api to weather 
 
 // GIVEN a weather dashboard with form inputs --need text feild input
@@ -23,20 +25,43 @@ function getCityWeather(lat, lon, city) {
   })
   .then(function (data) {
     console.log(data);
-    console.log(city);
-    displayWeather(data);
+    console.log(data.current.temp);
+    console.log(data.current.wind_speed);
+    console.log(data.current.humidity);
+    console.log(data.current.uvi);
+    //console/log(data.city);
+//current weather stat variables
+    //let city=document.getElementById.value('.text');
+    let temp=data.current.temp;
+    let wind=data.current.wind_speed;
+    let humidity=data.current.humidity;
+    let uvi=data.current.uvi;
+//Display weather to html
+    //let cityDisplay = document.querySelector('#City').append('in ' + city);
+    let cityDisplay = document.querySelector('.City').append(''+ city);
+    let tempDisplay = document.querySelector('.temp').append(''+ temp);
+    let windDisplay = document.querySelector('.wind').append(''+ wind);
+    let humidityDisplay = document.querySelector('.Humidity').append(''+ humidity);
+    let uvDisplay = document.querySelector('.UV').append(uvi);
+
+
+    //displayWeather(data);
   });
 }
 
-function displayWeather(data) {
-console.log(data);
-let city = document.querySelector('#City');
-let temp = document.querySelector('#temp');
-let wind = document.querySelector('#wind');
-let humidity = document.querySelector('#Hum');
-let uv = document.querySelector('#uv').append('Current');
-data.current = document.append('City');
-}
+// function displayWeather(this) {
+// console.log(data);
+// console.log(data.current.temp);
+// // let city = document.querySelector('#City');
+// // let temp = document.querySelector('#temp');
+// // let wind = document.querySelector('#wind');
+// // let humidity = document.querySelector('#Hum');
+// // let uv = document.querySelector('#uv');
+// // data.current.temp = document.getElementById('.temp').append('temp');
+
+
+
+// }
 
 
 //function printWeather

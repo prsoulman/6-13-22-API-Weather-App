@@ -1,5 +1,5 @@
 :root {
-
+    font-family: 'Open Sans', sans-serif;
 }
 
 .jumbotron {
@@ -23,11 +23,15 @@ button {
     background-color: #9ed7e4;
 }
 
+#city {
+    font-weight: bolder;
+}
 
 
 
 
 
+//Media queries 
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) { ... }
