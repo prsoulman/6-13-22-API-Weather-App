@@ -15,10 +15,10 @@ Technologies Used:
 --Google Fonts API
 
 
-![Weather Dashboard Demo](Weather_Dashboard_%Jun%16,%2022%11_03%AM.gif)
+![Weather Dashboard Demo](./Weather_Dashboard_%Jun%16,%2022%11_03%AM.gif)
 
-![Weather Dashboard Demo](Weather_Dashboard_2_Jun%16,%2022%11_07%AM.gif)
+![Weather Dashboard Demo](./Weather_Dashboard_2_Jun%16,%2022%11_07%AM.gif)
 
-![Weather Dashboard Screenshot](Screenshot%2022-06-16%112824.png)
+![Weather Dashboard Screenshot](./Screenshot%2022-06-16%112824.png)
 
 
