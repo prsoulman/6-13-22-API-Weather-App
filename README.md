@@ -6,13 +6,13 @@ Github: https://github.com/prsoulman/6-13-22-API-Weather-App.git
 
 Gitpages: https://prsoulman.github.io/6-13-22-API-Weather-App/
 
-Technologies Used:
---HTML
---CSS
--JavaScript
---Bootcamp API
---jQuery API
---Google Fonts API
+**Technologies Used:
+-*HTML*
+-*CSS*
+-*JavaScript*
+-*Bootcamp API*
+-*jQuery API*
+--*Google Fonts API*
 
 
 ![Weather Dashboard Demo](./Weather_Dashboard_%Jun%16,%2022%11_03%AM.gif)
