@@ -24,7 +24,7 @@ function getCityWeather(lat, lon, city) {
     return response.json();
   })
   .then(function (data) {
-    localStorage.setItem([i],city);
+    localStorage.setItem('city',city);
     console.log(data);
     console.log(data.current.temp);
     console.log(data.current.wind_speed);
@@ -32,7 +32,7 @@ function getCityWeather(lat, lon, city) {
     console.log(data.current.uvi);
     //console/log(data.city);
     //current weather stat variables
-    //let history = localStorage.getitem(city);
+    
     let temp=data.current.temp;
     let wind=data.current.wind_speed;
     let humidity=data.current.humidity;
@@ -41,9 +41,9 @@ function getCityWeather(lat, lon, city) {
     //let cityDisplay = document.querySelector('#City').append('in ' + city);
     //let cityStorage = document.querySelector('history').append(''+history)
     let cityDisplay = document.querySelector('.City').append(''+ city);
-    let tempDisplay = document.querySelector('.temp').append(''+ temp);
-    let windDisplay = document.querySelector('.wind').append(''+ wind);
-    let humidityDisplay = document.querySelector('.Humidity').append(''+ humidity);
+    let tempDisplay = document.querySelector('.temp').append(''+ temp+' F');
+    let windDisplay = document.querySelector('.wind').append(''+ wind+' MPH');
+    let humidityDisplay = document.querySelector('.Humidity').append(''+ humidity+'%');
     let uvDisplay = document.querySelector('.UV').append(uvi);
 
     for (var i =1; i<6;i++) {
@@ -54,17 +54,20 @@ function getCityWeather(lat, lon, city) {
       var imgTop=$('<img>').addClass('icon').attr('src', 'http://openweathermap.org/img/wn/10d.png').attr('alt', 'card img cap');
       var cardBody=$('<div>').addClass('card-body');
       var cardTitle=$('<h5>').addClass('card-title').text(day);
-      var tempEl=$('<p>').addClass('card-text').text('tempature: '+data.daily[i].temp.day);
+      var tempEl=$('<p>').addClass('card-text').text('Temperature: '+data.daily[i].temp.day+' F');
       var HumidityEl=$('<p>').addClass('card-text').text('Humidity: '+data.daily[i].humidity+'%');
-      var windEl=$('<p>').addClass('card-text').text('Wind: '+data.daily[i].wind_speed+'MPH');
+      var windEl=$('<p>').addClass('card-text').text('Wind: '+data.daily[i].wind_speed+' MPH');
       $('.five-day-forecast').append(card.append(cardBody.append(cardTitle.append(imgTop),tempEl,HumidityEl,windEl)));
     } 
     history();
   });
 }
 
-function history {
-  let cityStorage = document.querySelector('history').append(''+history)
+function history () {
+  let history = localStorage.getitem(city);
+  localStorage.getitem('city',city)
+  let cityStorage = document.querySelector('#history').append(''+history).attr('style', 'display: contents');
+  cityStorage.attr('style', 'display: block');
 }
 
 // function displayWeather(this) {
