@@ -24,20 +24,22 @@ function getCityWeather(lat, lon, city) {
     return response.json();
   })
   .then(function (data) {
+    localStorage.setItem([i],city);
     console.log(data);
     console.log(data.current.temp);
     console.log(data.current.wind_speed);
     console.log(data.current.humidity);
     console.log(data.current.uvi);
     //console/log(data.city);
-//current weather stat variables
-    //let city=document.getElementById.value('.text');
+    //current weather stat variables
+    //let history = localStorage.getitem(city);
     let temp=data.current.temp;
     let wind=data.current.wind_speed;
     let humidity=data.current.humidity;
     let uvi=data.current.uvi;
 //Display weather to html
     //let cityDisplay = document.querySelector('#City').append('in ' + city);
+    //let cityStorage = document.querySelector('history').append(''+history)
     let cityDisplay = document.querySelector('.City').append(''+ city);
     let tempDisplay = document.querySelector('.temp').append(''+ temp);
     let windDisplay = document.querySelector('.wind').append(''+ wind);
@@ -57,8 +59,12 @@ function getCityWeather(lat, lon, city) {
       var windEl=$('<p>').addClass('card-text').text('Wind: '+data.daily[i].wind_speed+'MPH');
       $('.five-day-forecast').append(card.append(cardBody.append(cardTitle.append(imgTop),tempEl,HumidityEl,windEl)));
     } 
-    //displayWeather(data);
+    history();
   });
+}
+
+function history {
+  let cityStorage = document.querySelector('history').append(''+history)
 }
 
 // function displayWeather(this) {
