@@ -3,6 +3,8 @@ var searchButton=document.getElementById('search');
 console.log(searchButton);
 
 
+
+
 // connect the api to weather 
 
 // GIVEN a weather dashboard with form inputs --need text feild input
@@ -22,21 +24,67 @@ function getCityWeather(lat, lon, city) {
     return response.json();
   })
   .then(function (data) {
+    localStorage.setItem('city',city);
     console.log(data);
-    console.log(city);
-    displayWeather(data);
+    console.log(data.current.temp);
+    console.log(data.current.wind_speed);
+    console.log(data.current.humidity);
+    console.log(data.current.uvi);
+    //console/log(data.city);
+    //current weather stat variables
+    
+    let temp=data.current.temp;
+    let wind=data.current.wind_speed;
+    let humidity=data.current.humidity;
+    let uvi=data.current.uvi;
+//Display weather to html
+    //let cityDisplay = document.querySelector('#City').append('in ' + city);
+    //let cityStorage = document.querySelector('history').append(''+history)
+    let cityDisplay = document.querySelector('.City').append(''+ city);
+    let tempDisplay = document.querySelector('.temp').append(''+ temp+' F');
+    let windDisplay = document.querySelector('.wind').append(''+ wind+' MPH');
+    let humidityDisplay = document.querySelector('.Humidity').append(''+ humidity+'%');
+    let uvDisplay = document.querySelector('.UV').append(uvi);
+
+    for (var i =1; i<6;i++) {
+      console.log(data.daily[i]);
+      var day=moment.unix(data.daily[i].dt).format('dddd');
+      console.log(day);
+      var card=$('<div>').addClass('card m-2').attr('style', 'width: auto');
+      var imgTop=$('<img>').addClass('icon').attr('src', 'http://openweathermap.org/img/wn/10d.png').attr('alt', 'card img cap');
+      var cardBody=$('<div>').addClass('card-body');
+      var cardTitle=$('<h5>').addClass('card-title').text(day);
+      var tempEl=$('<p>').addClass('card-text').text('Temperature: '+data.daily[i].temp.day+' F');
+      var HumidityEl=$('<p>').addClass('card-text').text('Humidity: '+data.daily[i].humidity+'%');
+      var windEl=$('<p>').addClass('card-text').text('Wind: '+data.daily[i].wind_speed+' MPH');
+      $('.five-day-forecast').append(card.append(cardBody.append(cardTitle.append(imgTop),tempEl,HumidityEl,windEl)));
+    } 
+    history();
   });
 }
 
-function displayWeather(resp) {
-console.log(resp);
-let city = document.querySelector('#City');
-let temp = document.querySelector('#temp');
-let wind = document.querySelector('#wind');
-let humidity = document.querySelector('#Hum');
-let uv = document.querySelector('#uv');
-resp.current = document.appendChild(row);
+function history () {
+  let history = localStorage.getitem(city);
+  localStorage.getitem('city',city)
+  let cityStorage = document.querySelector('#history').append(''+history).attr('style', 'display: contents');
+  cityStorage.attr('style', 'display: block');
 }
+
+// function displayWeather(this) {
+// console.log(data);
+// console.log(data.current.temp);
+// // let city = document.querySelector('#City');
+// // let temp = document.querySelector('#temp');
+// // let wind = document.querySelector('#wind');
+// // let humidity = document.querySelector('#Hum');
+// // let uv = document.querySelector('#uv');
+// // data.current.temp = document.getElementById('.temp').append('temp');
+
+
+
+// }
+
+
 //function printWeather
 
 // WHEN I search for a city THEN I am presented with current and future conditions for that city and that city is added to the search history
